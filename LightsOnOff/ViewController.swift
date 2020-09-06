@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    var isOn = false
+    var lightSwichStatus = false
     
     
     ///MARK: LABEL
@@ -23,17 +23,32 @@ class ViewController: UIViewController {
     
     @IBAction func onOffButton(_ sender: Any) {
         
+        
+        
+        lightSwichStatus = !lightSwichStatus
+            
+            
+            
+            
+            if lightSwichStatus{
+
+            ///TURN IT ON
         lightStatus.text = "Lights On"
         view.backgroundColor = .white
         lightStatus.textColor = .black
+         print("Light switch status is \(lightSwichStatus)")
+        } else {
+            lightStatus.text = "Lights Off"
+            view.backgroundColor = .black
+            lightStatus.textColor = .white
+            print("Light switch status is \(lightSwichStatus)")
+        }
+        
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(lightSwichStatus)
     }
     
     
